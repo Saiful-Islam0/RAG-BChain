@@ -42,15 +42,8 @@ This is the fastest way for anyone to run the complete platform. It builds and r
 1. **Clone the repository:**
    ```bash
    git clone <your-repo-url>
-   cd Fake_news_detection
+   cd RAG-BChain
    ```
-
-2. **Set up API keys:**
-   Copy the example environment file and fill in your keys:
-   ```bash
-   cp .env.example .env
-   ```
-   Open the `.env` file and insert your respective Groq, Serper, Sarvam AI, Sightengine, and ImgBB keys.
 
 3. **Start the application:**
    ```bash

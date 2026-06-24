@@ -219,21 +219,23 @@ def verify_news(user_claim, input_lang = 'auto'):
        
        #Start of converting the claim into English language
        #Calling SARVAM API to translate Indic languages to English
-       client = SarvamAI(api_subscription_key = sarvam_api_key)
-       
-       try:
-           translation = client.text.translate(
-           input=claim,
-           source_language_code="auto",
-           target_language_code="en-IN"
-           )
-       except Exception as e:
-           print(f"Error during translation: {e}")
-           error_msg = 'It appears you have provided input in an alien language. Please try again with some other language'
-           return error_msg,error_msg,error_msg
-       
-       claim_final = translation.translated_text if translation else claim
-       claim_orig_lang = translation.source_language_code
+       if sarvam_api_key:
+           try:
+               client = SarvamAI(api_subscription_key = sarvam_api_key)
+               translation = client.text.translate(
+                   input=claim,
+                   source_language_code="auto",
+                   target_language_code="en-IN"
+               )
+               claim_final = translation.translated_text if translation else claim
+               claim_orig_lang = translation.source_language_code
+           except Exception as e:
+               print(f"Error during translation: {e}")
+               error_msg = 'It appears you have provided input in an alien language. Please try again with some other language'
+               return error_msg,error_msg,error_msg
+       else:
+           claim_final = claim
+           claim_orig_lang = "auto"
        #End of converting the claim into English language
        
        #Calling fact checker prompt to verify news

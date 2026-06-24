@@ -41,7 +41,7 @@ This is the fastest way for anyone to run the complete platform. It builds and r
 
 1. **Clone the repository:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Saiful-Islam0/RAG-BChain.git
    cd RAG-BChain
    ```
 

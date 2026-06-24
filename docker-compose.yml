@@ -1,0 +1,27 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - claim_metadata:/app/claim_metadata
+      - claim_snapshots:/app/claim_snapshots
+      - flagged_sources:/app/flagged_sources
+      - uploaded_images:/app/uploaded_images
+      - image_metadata:/app/image_metadata
+      - model_cache:/root/.cache
+      - easyocr_cache:/root/.EasyOCR
+    restart: unless-stopped
+
+volumes:
+  claim_metadata:
+  claim_snapshots:
+  flagged_sources:
+  uploaded_images:
+  image_metadata:
+  model_cache:
+  easyocr_cache:

@@ -1,0 +1,50 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Editor and IDE configurations
+.vscode/
+.idea/
+.cursor/
+*.swp
+*.swo
+
+# Node dependencies and build folders
+node_modules/
+dist/
+bangla-fact-check-main/dist/
+bangla-fact-check-main/node_modules/
+
+# Python caches and local builds
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+code/__pycache__/
+code/*.pyc
+code/requirements.docker.txt
+
+# Local data and uploaded images
+code/uploaded_images/
+code/image_metadata/
+code/claim_metadata/
+code/claim_snapshots/
+code/flagged_sources/
+uploaded_images/
+image_metadata/
+claim_metadata/
+claim_snapshots/
+flagged_sources/
+
+# Environment configurations (contain API keys/secrets)
+.env
+code/.env
+bangla-fact-check-main/.env

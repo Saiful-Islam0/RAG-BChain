@@ -45,6 +45,4 @@ claim_snapshots/
 flagged_sources/
 
 # Environment configurations (contain API keys/secrets)
-.env
-code/.env
 bangla-fact-check-main/.env
